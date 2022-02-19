@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "ff4704cc-17f4-4609-8790-3d76c2eb66e3",
+		"name": "Mixtel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/produtos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos"
+					],
+					"query": [
+						{
+							"key": "descricao",
+							"value": "TV",
+							"disabled": true
+						},
+						{
+							"key": "sku",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/produtos/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastra produto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\":\"SOMZEIRA\",\r\n    \"sku\": \"AFAS@#$#@#3213\",\r\n    \"categoria\": \"Eletronico\",\r\n    \"sub_categoria\": \"SOM\",\r\n    \"marca\": \"NOTMULTILAZER\",\r\n    \"modelo\": \"GRANDE\",\r\n    \"fabricante\": \"CARAQUEFAZSOM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/produtos/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza produto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"213141234123\",\r\n    \"categoria\": \"Eletronico\",\r\n    \"sub_categoria\": \"Som\",\r\n    \"marca\": \"Phylko\",\r\n    \"modelo\": \"TremeTreme\",\r\n    \"fabricante\": \"QuemFezDVdd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/produtos/2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualiza produto parcial",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descricao\": \"TV DO BALACOBACO xxl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/produtos/2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleta produto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/produtos/2/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"produtos",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:8000/api/v1"
+		}
+	]
+}
